@@ -82,6 +82,14 @@ class PopPoint(Point):
         #     return False
 
         # ヨーロッパ版
+
+        # まず、緯度経度ではじく
+        dx = abs(self.longitude - p.longitude)
+        dy = abs(self.latitude - p.latitude)
+        if dx > NOT_NEIGHBOR_THRESHOLD_LON or dy > NOT_NEIGHBOR_THRESHOLD_LAT:
+            return False
+        
+        
         dist = self.get_distance(p)
         if dist < NEIGHBOR_THRESHOLD_EUROPE:
             return True
