@@ -26,53 +26,53 @@ NOT_NEIGHBOR_THRESHOLD_LAT = 0.03
 # IS_IN_MESH_THRESHOLD_LON = 0.0016  # 5次メッシュ
 
 # 緯度1度あたりの距離（km）
-LAT_DISTANCE = 111
+# LAT_DISTANCE = 111
 
 # 経度1度あたりの距離（km）
 # https://www.wingfield.gr.jp/archives/9721
-def get_lon_distance(lat):
-    if lat > 74:
-        return 29
-    elif lat > 72:
-        return 33
-    elif lat > 70:
-        return 37
-    elif lat > 68:
-        return 40
-    elif lat > 66:
-        return 44
-    elif lat > 64:
-        return 47
-    elif lat > 62:
-        return 51
-    elif lat > 60:
-        return 54
-    elif lat > 58:
-        return 57
-    elif lat > 56:
-        return 61
-    elif lat > 54:
-        return 64
-    elif lat > 52:
-        return 67
-    elif lat > 50:
-        return 70
-    elif lat > 45:
-        return 75
-    elif lat > 40:
-        return 82
-    elif lat > 35:
-        return 88
-    elif lat > 30:
-        return 94
-    elif lat > 25:
-        return 99
-    elif lat > 20:
-        return 103
-    elif lat > 10:
-        return 108
-    else:
-        return 111
+# def get_lon_distance(lat):
+#     if lat > 74:
+#         return 29
+#     elif lat > 72:
+#         return 33
+#     elif lat > 70:
+#         return 37
+#     elif lat > 68:
+#         return 40
+#     elif lat > 66:
+#         return 44
+#     elif lat > 64:
+#         return 47
+#     elif lat > 62:
+#         return 51
+#     elif lat > 60:
+#         return 54
+#     elif lat > 58:
+#         return 57
+#     elif lat > 56:
+#         return 61
+#     elif lat > 54:
+#         return 64
+#     elif lat > 52:
+#         return 67
+#     elif lat > 50:
+#         return 70
+#     elif lat > 45:
+#         return 75
+#     elif lat > 40:
+#         return 82
+#     elif lat > 35:
+#         return 88
+#     elif lat > 30:
+#         return 94
+#     elif lat > 25:
+#         return 99
+#     elif lat > 20:
+#         return 103
+#     elif lat > 10:
+#         return 108
+#     else:
+#         return 111
 
 
 # 都会度計算時に人口に乗じる値
@@ -111,12 +111,63 @@ ZOOM_POINT = 14
 
 
 # 国名
-# def get_country_name(country):
-#     if country == "PT":
-#         return "ポルトガル"
-#     elif country == "IE":
-#         return "アイルランド"
-#     elif country == "":
+def get_country_name(country):
+    if country == "PT":
+        return "ポルトガル"
+    elif country == "IE":
+        return "アイルランド"
+    elif country == "UK":
+        return "イングランド"
+    elif country == "FR":
+        return "フランス"
+    elif country == "BE":
+        return "ベルギー"
+    elif country == "NL":
+        return "オランダ"
+    elif country == "NO":
+        return "ノルウェー"
+    elif country == "DE":
+        return "ドイツ"
+    elif country == "IT":
+        return "イタリア"
+    elif country == "DK":
+        return "デンマーク"
+    elif country == "CH":
+        return "スイス"
+    elif country == "SE":
+        return "スウェーデン"
+    elif country == "AT":
+        return "オーストリア"
+    elif country == "CZ":
+        return "チェコ"
+    elif country == "HR":
+        return "クロアチア"
+    elif country == "SI":
+        return "スロベニア"
+    elif country == "PL":
+        return "ポーランド"
+    elif country == "FI":
+        return "フィンランド"
+    elif country == "HU":
+        return "ハンガリー"
+    elif country == "SK":
+        return "スロバキア"
+    elif country == "LT":
+        return "リトアニア"
+    elif country == "LV":
+        return "ラトビア"
+    elif country == "EE":
+        return "エストニア"
+    elif country == "RO":
+        return "ルーマニア"
+    elif country == "XK*":
+        return "セルビア"
+    elif country == "BG":
+        return "ブルガリア"
+    elif country == "EL":
+        return "ギリシャ"
+    elif country == "ES":
+        return スペイン
 
 
 # def get_faculty_ja(faculty):
