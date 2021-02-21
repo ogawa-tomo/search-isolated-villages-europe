@@ -111,12 +111,13 @@ ZOOM_POINT = 14
 
 
 # 国名
-def get_country_name(country):
-    if country == "PT":
-        return "ポルトガル"
-    elif country == "IE":
-        return "アイルランド"
-    elif country == ""
+# def get_country_name(country):
+#     if country == "PT":
+#         return "ポルトガル"
+#     elif country == "IE":
+#         return "アイルランド"
+#     elif country == "":
+
 
 # def get_faculty_ja(faculty):
 #     if faculty == POST_OFFICE:
