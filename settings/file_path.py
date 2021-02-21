@@ -3,8 +3,8 @@ import time
 
 
 # 人口ポイントデータ読み込み
-raw_pop_point_file = os.path.join("./raw_data", "europe.geojson")
-# raw_pop_point_file = os.path.join("./raw_data", "europe_test_northwest.geojson")
+# raw_pop_point_file = os.path.join("./raw_data", "europe.geojson")
+raw_pop_point_file = os.path.join("./raw_data", "europe_test_southwest.geojson")
 
 # 境界メッシュshpデータ格納ディレクトリ
 # raw_mesh_shp_dir = os.path.join("./raw_data", "mesh_shp")

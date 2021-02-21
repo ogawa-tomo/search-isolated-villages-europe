@@ -25,6 +25,20 @@ def get_distance(x1, y1, x2, y2):
     return dist
 
 
+def get_distance_simple(x1, y1, x2, y2):
+    """
+    ヨーロッパ用の簡易距離計算
+    """
+    # 経度1度あたりの距離を緯度に合わせて平均距離で算出
+    lon_distance_1 = get_lon_distance(y1)
+    lon_distance_2 = get_lon_distance(y2)
+    lon_distance = (lon_distance_1 + lon_distance_2) / 2
+
+    dx = abs(x1 - x2) * lon_distance
+    dy = abs(y1 - y2) * LAT_DISTANCE
+    dist = math.sqrt(dx ** 2 + dy ** 2)
+    return dist
+
 def get_google_map_url(lat, lon):
     """
     google mapのURL（航空写真）を得る

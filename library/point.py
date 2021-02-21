@@ -21,6 +21,12 @@ class Point(object):
         :return: 距離km
         """
         return cf.get_distance(self.longitude, self.latitude, p.longitude, p.latitude)
+    
+    def get_distance_simple(self, p):
+        """
+        ヨーロッパ用簡易距離計算
+        """
+        return  cf.get_distance_simple(self.longitude, self.latitude, p.longitude, p.latitude)
 
     def get_google_map_url(self):
         return cf.get_google_map_url(self.latitude, self.longitude)
@@ -137,6 +143,7 @@ class Village(object):
         # self.point_keys = []
         self.point_grid_ids = []
         self.perimeter_points = []
+        self.country = None
 
         self.center_point = None
         self.latitude = None
@@ -178,6 +185,7 @@ class Village(object):
         # self.pref = self.center_point.pref
         # self.city = self.center_point.city
         # self.district = self.center_point.district
+        self.country = self.center_point.country
 
         # 離島かどうか
         # self.is_island = self.center_point.is_island
@@ -201,7 +209,7 @@ class Village(object):
                 center_point = p
         return center_point
 
-    def get_distance(self, point):
+    def get_distance_simple(self, point):
         """
         集落から集落外ポイントへの距離（最短地点）
         :param point:
@@ -209,7 +217,8 @@ class Village(object):
         """
         dist = 0
         for i, p in enumerate(self.perimeter_points):
-            tmp_dist = p.get_distance(point)
+            # tmp_dist = p.get_distance(point)
+            tmp_dist = p.get_distance_simple(point)  # ヨーロッパ用の簡易距離計算
             if i == 0:
                 dist = tmp_dist
                 continue

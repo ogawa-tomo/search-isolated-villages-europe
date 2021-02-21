@@ -26,10 +26,54 @@ NOT_NEIGHBOR_THRESHOLD_LAT = 0.03
 # IS_IN_MESH_THRESHOLD_LON = 0.0016  # 5次メッシュ
 
 # 緯度1度あたりの距離（km）
-# LAT_DISTANCE = 111
+LAT_DISTANCE = 111
 
 # 経度1度あたりの距離（km）
-# LON_DISTANCE = 91
+# https://www.wingfield.gr.jp/archives/9721
+def get_lon_distance(lat):
+    if lat > 74:
+        return 29
+    elif lat > 72:
+        return 33
+    elif lat > 70:
+        return 37
+    elif lat > 68:
+        return 40
+    elif lat > 66:
+        return 44
+    elif lat > 64:
+        return 47
+    elif lat > 62:
+        return 51
+    elif lat > 60:
+        return 54
+    elif lat > 58:
+        return 57
+    elif lat > 56:
+        return 61
+    elif lat > 54:
+        return 64
+    elif lat > 52:
+        return 67
+    elif lat > 50:
+        return 70
+    elif lat > 45:
+        return 75
+    elif lat > 40:
+        return 82
+    elif lat > 35:
+        return 88
+    elif lat > 30:
+        return 94
+    elif lat > 25:
+        return 99
+    elif lat > 20:
+        return 103
+    elif lat > 10:
+        return 108
+    else:
+        return 111
+
 
 # 都会度計算時に人口に乗じる値
 POP_PARAM = 1
@@ -65,6 +109,14 @@ ZOOM_POINT = 14
 # ABANDONED_STATION = "abandoned_station"
 # RESEARCH_INSTITUTE = "research_institute"
 
+
+# 国名
+def get_country_name(country):
+    if country == "PT":
+        return "ポルトガル"
+    elif country == "IE":
+        return "アイルランド"
+    elif country == ""
 
 # def get_faculty_ja(faculty):
 #     if faculty == POST_OFFICE:

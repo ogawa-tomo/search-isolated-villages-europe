@@ -105,7 +105,7 @@ def register_urban_point(villages, pop_points):
             # -----集落周縁からの都会度（集落内メッシュを計算に含めず、最短距離で計算）
             if p in v.points:
                 continue
-            dist = v.get_distance(p)
+            dist = v.get_distance_simple(p)  # 簡易距離計算
             v.urban_point += cf.calc_urban_point(p.population, dist)
 
         v.urban_point_round = round(v.urban_point, LAT_LON_ROUND)  # html表示用

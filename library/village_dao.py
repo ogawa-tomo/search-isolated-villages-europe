@@ -10,6 +10,7 @@ class VillageDAO(object):
             # "pref",
             # "city",
             # "district",
+            "country",
             "latitude",
             "longitude",
             "population",
@@ -23,6 +24,7 @@ class VillageDAO(object):
         # self.pref_idx = self.columns.index("pref")
         # self.city_idx = self.columns.index("city")
         # self.district_idx = self.columns.index("district")
+        self.country_idx = self.columns.index("country")
         self.lat_idx = self.columns.index("latitude")
         self.lon_idx = self.columns.index("longitude")
         self.pop_idx = self.columns.index("population")
@@ -55,6 +57,7 @@ class VillageDAO(object):
                 # row[self.pref_idx] = v.pref
                 # row[self.city_idx] = v.city
                 # row[self.district_idx] = v.district
+                row[self.country_idx] = v.country
                 row[self.pop_idx] = v.population
                 row[self.lat_idx] = v.latitude
                 row[self.lon_idx] = v.longitude
@@ -85,6 +88,7 @@ class VillageDAO(object):
                 # v.pref = line[self.pref_idx]
                 # v.city = line[self.city_idx]
                 # v.district = line[self.district_idx]
+                v.country = line[self.country_idx]
                 v.population = int(line[self.pop_idx])
                 v.latitude = float(line[self.lat_idx])
                 v.longitude = float(line[self.lon_idx])
