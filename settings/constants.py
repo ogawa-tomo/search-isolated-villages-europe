@@ -100,6 +100,7 @@ URBAN_POINT_ROUND = 2
 ZOOM_DEFAULT = 10
 ZOOM_POINT = 14
 
+ALL = "全域"
 # ZENKOKU = "全国"
 # ELEMENTARY_SCHOOL = "elementary_school"
 # POST_OFFICE = "post_office"
@@ -112,62 +113,72 @@ ZOOM_POINT = 14
 
 # 国名
 def get_country_name(country):
-    if country == "PT":
-        return "ポルトガル"
-    elif country == "IE":
+    
+    if country == "IE":
         return "アイルランド"
+    elif country == "AL":
+        return "アルバニア"
     elif country == "UK":
-        return "イングランド"
-    elif country == "FR":
-        return "フランス"
-    elif country == "BE":
-        return "ベルギー"
-    elif country == "NL":
-        return "オランダ"
-    elif country == "NO":
-        return "ノルウェー"
-    elif country == "DE":
-        return "ドイツ"
+        return "イギリス"
     elif country == "IT":
         return "イタリア"
-    elif country == "DK":
-        return "デンマーク"
+    elif country == "EE":
+        return "エストニア"
+    elif country == "NL":
+        return "オランダ"
+    elif country == "AT":
+        return "オーストリア"
+    elif country == "HR":
+        return "クロアチア"
+    elif country == "EL":
+        return "ギリシャ"
     elif country == "CH":
         return "スイス"
     elif country == "SE":
         return "スウェーデン"
-    elif country == "AT":
-        return "オーストリア"
-    elif country == "CZ":
-        return "チェコ"
-    elif country == "HR":
-        return "クロアチア"
-    elif country == "SI":
-        return "スロベニア"
-    elif country == "PL":
-        return "ポーランド"
-    elif country == "FI":
-        return "フィンランド"
-    elif country == "HU":
-        return "ハンガリー"
+    elif country == "ES":
+        return "スペイン"
     elif country == "SK":
         return "スロバキア"
-    elif country == "LT":
-        return "リトアニア"
+    elif country == "SI":
+        return "スロベニア"
+    elif country == "CZ":
+        return "チェコ"
+    elif country == "DK":
+        return "デンマーク"
+    elif country == "DE":
+        return "ドイツ"
+    elif country == "NO":
+        return "ノルウェー"
+    elif country == "HU":
+        return "ハンガリー"
+    elif country == "FI":
+        return "フィンランド"
+    elif country == "FR":
+        return "フランス"
+    elif country == "BG":
+        return "ブルガリア"
+    elif country == "BE":
+        return "ベルギー"
+    elif country == "PL":
+        return "ポーランド"
+    elif country == "PT":
+        return "ポルトガル"
+    elif country == "MT":
+        return "マルタ"
     elif country == "LV":
         return "ラトビア"
-    elif country == "EE":
-        return "エストニア"
+    elif country == "LT":
+        return "リトアニア"
+    elif country == "LI":
+        return "リヒテンシュタイン"
     elif country == "RO":
         return "ルーマニア"
     elif country == "XK*":
-        return "セルビア"
-    elif country == "BG":
-        return "ブルガリア"
-    elif country == "EL":
-        return "ギリシャ"
-    elif country == "ES":
-        return スペイン
+        return "？？？"    
+    else:
+        print(country)
+        raise Exception
 
 
 # def get_faculty_ja(faculty):

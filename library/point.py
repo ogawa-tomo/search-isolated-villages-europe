@@ -225,6 +225,9 @@ class Village(object):
             if tmp_dist < dist:
                 dist = tmp_dist
         return dist
+    
+    def get_country_name(self):
+        return get_country_name(self.country)
 
     # def get_is_coast(self):
     #     for p in self.points:
