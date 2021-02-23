@@ -6,13 +6,13 @@
 <!--<meta property="og:url" content="記事のURL" /> /*③*/-->
 <meta property="og:title" content="秘境集落探索ツール（ヨーロッパ版）" />
 <meta property="og:description" content="ヨーロッパの秘境集落を探索し、人口分布データをもとに秘境度を評価して国別にランキングで出力します。" />
-<meta property="og:image" content="https://search-isolated-villages-2.herokuapp.com/static/village.png" />
+<meta property="og:image" content="https://search-isolated-villages-eur.herokuapp.com/static/europe.png" />
 
 <title>秘境集落探索ツール（ヨーロッパ版）</title>
 
-<h1>秘境集落探索ツール（ver.2）</h1>
+<h1>秘境集落探索ツール（ヨーロッパ版）</h1>
 <br>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://search-isolated-villages-europe.herokuapp.com/" data-text="秘境集落探索ツール（ヨーロッパ版）" data-size="large">Tweet</a>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://search-isolated-villages-eur.herokuapp.com/" data-text="秘境集落探索ツール（ヨーロッパ版）" data-size="large">Tweet</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <br>
 ヨーロッパの秘境集落を探索し、人口分布データをもとに秘境度を評価して国別にランキングで出力します。<br>
@@ -32,8 +32,8 @@
         <a class="dropdown-item" href="/research_institute">秘境研究機関探索ツール</a>
     </div>
 </div> -->
-
-<img src="/static/village.png" width="350">
+<br>
+<img src="/static/europe.jpg" width="500">
 <br><br>
 
 <!--<form action="/result" method="post">-->
@@ -59,8 +59,9 @@
                             <option value="エストニア">エストニア</option>
                             <option value="オランダ">オランダ</option>
                             <option value="オーストリア">オーストリア</option>
-                            <option value="クロアチア">クロアチア</option>
                             <option value="ギリシャ">ギリシャ</option>
+                            <option value="クロアチア">クロアチア</option>
+                            <option value="コソボ">コソボ</option>
                             <option value="スイス">スイス</option>
                             <option value="スウェーデン">スウェーデン</option>
                             <option value="スペイン">スペイン</option>
@@ -82,7 +83,7 @@
                             <option value="リトアニア">リトアニア</option>
                             <option value="リヒテンシュタイン">リヒテンシュタイン</option>
                             <option value="ルーマニア">ルーマニア</option>
-                            <option value="？？？">？？？</option>
+                            
                     </select>
                 {% endif %}
             </td>
@@ -95,7 +96,7 @@
                     {{ setting.village_pop_lower_limit }}<font size="-1">人以上</font>
                     {{ setting.village_pop_upper_limit }}<font size="-1">人以下</font>
                 {% else %}
-                    <input type="number" name="village_pop_lower_limit" id="village_pop_lower_limit" style="width: 3em" value="1" min="1" required><font size="-1">人</font> ~
+                    <input type="number" name="village_pop_lower_limit" id="village_pop_lower_limit" style="width: 4em" value="1" min="1" required><font size="-1">人</font> ~
                     <input type="number" name="village_pop_upper_limit" id="village_pop_upper_limit" style="width: 5em" value="100000" min="1" required><font size="-1">人</font>
                 {% endif %}
             </td>
@@ -113,7 +114,7 @@
                     {{ setting.village_size_upper_limit }}<font size="-1">メッシュ以下</font>
                 {% else %}
                     <input type="number" name="village_size_lower_limit" id="village_size_lower_limit" style="width: 3em" value="1" min="1" max="10" required><font size="-1">メッシュ</font> ~
-                    <input type="number" name="village_size_upper_limit" id="village_size_upper_limit" style="width: 3em" size="3" value="10" min="1" max="100" required><font size="-1">メッシュ<sup>*2</sup></font>
+                    <input type="number" name="village_size_upper_limit" id="village_size_upper_limit" style="width: 3em" size="3" value="10" min="1" max="10" required><font size="-1">メッシュ<sup>*2</sup></font>
                 {% endif %}
             </td>
         </tr>
@@ -125,7 +126,7 @@
         <br><br>
         <font size="-1">
             *1: 1メッシュはおよそ1km四方<br>
-            *2: 集落面積の上限は100メッシュ<br>
+            *2: 集落面積の上限は10メッシュ<br>
         </font>
         <br>
     {% endif %}
@@ -134,13 +135,11 @@
 
 {% if result %}
     <h2 id="result">探索結果</h2>
-    <!-- <br>
-
+    <br>
+    <a href="{{ result.get_mesh_map_get_url() }}" target="_blank">集落分布図</a><br>
     <font size="-1">
-        ※上位{{ result.output_map_num }}件まで<br>
-        ※都道府県単位の探索時、人口分布を合わせて表示<br>
-        ※都道府県単位の探索時、表示する順位は離島を含む集落全体の順位
-    </font> -->
+        ※上位{{ result.output_map_num }}件まで
+    </font>
     <br><br>
     <table class="table table-responsive">
         <tr>
@@ -170,6 +169,7 @@
                 <td>{{ v.district }}</td> -->
                 <td>
                     <a href="{{ v.get_google_map_url() }}" target="_blank">Googleマップ</a>
+                    <a href="{{ v.get_mesh_map_get_url(result.map_file) }}" target="_blank">集落分布図</a>
                 </td>
                 <td>{{ v.population }}<font size="-1">人</font></td>
                 <td>{{ v.size  }}<font size="-1">メッシュ</font></td>

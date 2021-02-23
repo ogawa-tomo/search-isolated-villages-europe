@@ -128,10 +128,12 @@ def get_country_name(country):
         return "オランダ"
     elif country == "AT":
         return "オーストリア"
-    elif country == "HR":
-        return "クロアチア"
     elif country == "EL":
         return "ギリシャ"
+    elif country == "HR":
+        return "クロアチア"
+    elif country == "XK*":
+        return "コソボ"  
     elif country == "CH":
         return "スイス"
     elif country == "SE":
@@ -173,9 +175,7 @@ def get_country_name(country):
     elif country == "LI":
         return "リヒテンシュタイン"
     elif country == "RO":
-        return "ルーマニア"
-    elif country == "XK*":
-        return "？？？"    
+        return "ルーマニア"  
     else:
         print(country)
         raise Exception
