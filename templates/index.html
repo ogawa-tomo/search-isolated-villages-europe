@@ -144,7 +144,8 @@
     <table class="table table-responsive">
         <tr>
             <th>順位</th>
-            <th>位置座標</th>
+            <th>緯度</th>
+            <th>経度</th>
             <th>国</th>
             <!-- <th>都道府県</th>
             <th>市町村</th>
@@ -161,7 +162,8 @@
         {% for v in result.objects[:result.num] %}
             <tr>
                 <td>{{ loop.index }}<font size="-1">位</font></td>
-                <td>{{ v.latitude_round }}, {{ v.longitude_round }}</td>
+                <td>{{ v.latitude_round }}</td>
+                <td>{{ v.longitude_round }}</td>
                 <td>{{ v.get_country_name() }}</td>
 
                 <!-- <td>{{ v.pref }}</td>
